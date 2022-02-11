@@ -6,4 +6,4 @@ Wikipedia: _The Game of Life, also known simply as Life, is a cellular automaton
 I copied this code from a YouTube video while simultaneously understanding how to build it in the first place.
 Currently, it only shows a grid and the game inside it.
 
-In the next version, I want to add a proper UI using HTML and CSS.
+**11 February, 2022:** In the next version, I want to add a proper UI using HTML and CSS.
