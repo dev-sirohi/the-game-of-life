@@ -1,8 +1,108 @@
-html, body {
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Comforter&family=Cutive+Mono&family=PT+Serif&family=Prata&family=Varela+Round&display=swap");
+
+html,
+body {
   margin: 0;
   padding: 0;
+  background-color: rgb(173, 216, 230);
+}
+
+.navbar {
+  font-family: "Prata", serif;
+  text-align: center;
+  background-color: rgb(252, 82, 111);
+  padding: 0.5rem;
+  color: rgb(173, 216, 230);
+  box-shadow: 5px 10px 15px rgb(253, 176, 189);
+}
+
+.control-panel {
+  position: relative;
+  /* overflow: hidden; */
+  /* justify-content: center; */
+  /* align-items: center; */
+  /* border: 1px solid pink; */
+  text-align: center;
+  /* margin-bottom: 1rem; */
+  /* padding: 1rem; */
+}
+
+button {
+  font-family: "Cutive Mono", monospace;
+  box-shadow: 5px 10px 15px rgb(253, 176, 189);
+  background-color: rgb(252, 82, 111);
+  border: none;
+  color: lightblue;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-top: 1rem;
+}
+
+.resolution button {
+  padding: 5px 10px;
 }
 
 canvas {
   display: block;
+  /* border: 1px solid rgb(252, 82, 111); */
+  box-shadow: 5px 10px 15px rgb(253, 176, 189);
+}
+
+#sketch-holder {
+  margin-top: 1rem;
+  /* border: 10px solid rgb(252, 82, 111); */
+  display: flex;
+  /* This centers our sketch horizontally. */
+  justify-content: center;
+
+  /* This centers our sketch vertically. */
+  align-items: center;
+}
+
+.howtoplay {
+  margin-top: 3rem;
+  font-family: "Bebas Neue", cursive;
+  color: rgb(224, 72, 98);
+  text-align: center;
+}
+
+.explanation {
+  font-family: "Prata", serif;
+  margin: 0rem 15rem;
+  color: rgb(224, 72, 98);
+  margin-bottom: 2rem;
+}
+
+.instructions {
+  font-family: "Prata", serif;
+  text-align: center;
+  margin: 0rem 15rem;
+  color: rgb(224, 72, 98);
+}
+
+footer {
+  background-color: rgb(252, 82, 111);
+  padding: 2rem;
+  box-shadow: 30px 0px 45px rgb(253, 176, 189);
+}
+
+@media only screen and (max-width: 600px) {
+  .instructions {
+    margin: 1rem 1rem;
+  }
+
+  .explanation {
+    margin: 1rem 1rem;
+  }
+}
+
+button:hover {
+  background-color: rgb(235, 10, 66);
+}
+
+button:active {
+  background-color: rgb(235, 10, 66);
 }

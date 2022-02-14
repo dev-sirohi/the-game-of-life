@@ -3,9 +3,30 @@
 let grid;
 let rows;
 let cols;
+let h;
+let w;
+let flag = false;
 let resolution = 5;
 
 // MY FUNCTIONS
+
+const onex = document.getElementById('1');
+const twox = document.getElementById('2');
+const fourx = document.getElementById('4');
+const eightx = document.getElementById('8');
+
+onex.addEventListener("click", () => {
+  resolution = 5;
+});
+twox.addEventListener("click", () => {
+  resolution = 10;
+});
+fourx.addEventListener("click", () => {
+  resolution = 25;
+});
+eightx.addEventListener("click", () => {
+  resolution = 50;
+});
 
 function make2DArray(cols, rows) {
   let arr = new Array(cols);
@@ -31,8 +52,21 @@ function countNeighbors(grid, x, y) {
 // SETUP AND DRAW
 
 function setup() {
-  createCanvas(1200, 1200);
+  function myFunction(x) {
+    if (x.matches) {
+      h = 300;
+      w = 300;
+    } else {
+      h = 500;
+      w = 500;
+    }
+  }
   
+  var x = window.matchMedia("(max-width: 600px)")
+  myFunction(x)
+  var canvas = createCanvas(h, w);
+  line(0, 0, width, height);
+  canvas.parent('sketch-holder');
   cols = width / resolution;
   rows = height / resolution;
   grid = make2DArray(rows, cols);
@@ -42,17 +76,18 @@ function setup() {
     }
   }
   console.log(grid);
+  // console.log(colorChooser());
 }
 
 function draw() {
-  background(0);
+  background(173, 216, 230);
   for (let i = 0; i < cols; i++) {
     for (let j = 0; j < rows; j++) {
       let x = i * resolution;
       let y = j * resolution;
       if (grid[i][j] == 1) {
-        fill(204, 104, 0);
-        stroke(0);
+        fill(252, 82, 111);
+        stroke(173, 216, 230);
         rect(x, y, resolution - 1, resolution - 1);
       }
     }
@@ -78,5 +113,23 @@ function draw() {
       }
     }
   }
-  grid = next;
+  const starter = document.getElementById('starter');
+  const stopper = document.getElementById('stopper');
+  const resetter = document.getElementById('resetter');
+
+  starter.addEventListener("click", () => {
+    flag = true;
+  });
+  stopper.addEventListener("click", () => {
+    flag = false;
+  })
+
+  if (flag) {
+    grid = next;
+  }
+
+  resetter.addEventListener("click", () => {
+    flag = false;
+    setup();
+  })
 }
