@@ -7,3 +7,5 @@ I copied this code from a YouTube video while simultaneously understanding how t
 Currently, it only shows a grid and the game inside it.
 
 **11 February, 2022:** In the next version, I want to add a proper UI using HTML and CSS.
+
+**15 February, 2022** Added proper UI and now it looks beaut **chef's kiss**.
